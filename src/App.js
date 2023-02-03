@@ -26,6 +26,7 @@ function App() {
           <p>reglas reglas</p>
         </div>
       )}
+      {dicesFinished && <button onClick={() => {setDices([]); setDicesFinished(false)}}>Nueva partida</button>}
       <Dices array={dices} />
       <h3>{dicesFinished ? 'Puntuación final' : 'Puntuación'}:</h3>
       <Puntuation array={dices} />
