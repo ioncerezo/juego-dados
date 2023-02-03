@@ -1,6 +1,7 @@
 import { useState , useEffect } from "react";
 import "./App.css";
 import Dices from "./elements/Dices";
+import Puntuation from "./elements/Puntuation";
 
 function App() {
   const [showRules, setShowRules] = useState(false);
@@ -26,7 +27,7 @@ function App() {
         </div>
       )}
       <Dices array={dices} />
-      
+      <Puntuation array={dices} />
     </div>
   );
 }
