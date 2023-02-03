@@ -28,9 +28,9 @@ function score(dice) {
 }
 function Puntuation({ array }) {
   return (
-    <div className="puntuation">
-      <p>{score(array)}</p>
-    </div>
+    < >
+      <p className="puntuation">{score(array)}</p>
+    </>
   );
 }
 

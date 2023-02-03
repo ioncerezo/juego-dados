@@ -11,25 +11,30 @@ function App() {
     if (dices.length > 4) setDicesFinished(true)
   }, [dices.length])
   return (
-    <div>
+    <div className="board">
       <h1>DICE GAME</h1>
-      
+      <div className="buttons">
       <button onClick={()=>setShowRules(!showRules)}>Mostrar reglas</button>
       <button disabled={dicesFinished} onClick={()=>{
         let diceArray = [...dices]
         diceArray.push(Math.floor(Math.random() * 6)+1)
         setDices(diceArray)
-      }}>New Dice</button>
+      }}>Tirar dado</button>
+      {dicesFinished && <button onClick={() => {setDices([]); setDicesFinished(false)}}>Nueva partida</button>}
+      </div>
+      
+      
       {showRules && (
         <div>
           <h3>Reglas</h3>
           <p>reglas reglas</p>
         </div>
       )}
-      {dicesFinished && <button onClick={() => {setDices([]); setDicesFinished(false)}}>Nueva partida</button>}
       <Dices array={dices} />
+      <div>
       <h3>{dicesFinished ? 'Puntuación final' : 'Puntuación'}:</h3>
       <Puntuation array={dices} />
+      </div>
     </div>
   );
 }
