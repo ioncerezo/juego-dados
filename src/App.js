@@ -4,7 +4,8 @@ import Dices from "./elements/Dices";
 
 function App() {
   const [showRules, setShowRules] = useState(false);
-  const dicesnum = [1, 2, 3, 4, 5]
+  const [dices, setDices] = useState([1, 2, 3, 4, 5])
+  
   return (
     <div>
       <h1>DICE GAME</h1>
@@ -16,7 +17,7 @@ function App() {
           <p>reglas reglas</p>
         </div>
       )}
-      <Dices array={dicesnum} />
+      <Dices array={dices} />
     </div>
   );
 }

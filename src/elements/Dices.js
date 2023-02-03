@@ -4,9 +4,8 @@ function Dices({array}) {
 
     return (
         <div className='dice-container'>
-        
-        {array.map((e) => <div className='dice'>{e}</div>)
-        }
+    
+        {array.map((e) => <span className={`dice dice-${e}`}></span>)}
         </div>
     )
 }
