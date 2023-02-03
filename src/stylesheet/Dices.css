@@ -1,0 +1,12 @@
+.dice {
+    width: 60px;
+    height: 60px;
+    background-color: coral;
+    border: 2px solid black
+}
+
+.dice-container {
+    margin: 20px;
+    display: flex;
+    gap: 4px
+}
