@@ -2,19 +2,44 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: monospace;
 }
 
 h1 {
     font-size: 3.5rem;
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 button {
-    padding: 5px;
+    padding: 10px;
     font-family: monospace;
     font-size: 0.85rem;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+button:hover {
+    background-color: gainsboro;
 }
 .buttons {
     display: flex;
     justify-content: center;
     gap: 4px;
+}
+
+.puntuation {
+    display: flex;
+    padding: 30px;
+    border-radius: 5px;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    min-width: 200px;
+    min-height: 200px;
+    background-color: gainsboro;
+}
+
+.puntuation > p{
+    font-size: 2rem;
 }

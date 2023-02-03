@@ -31,8 +31,8 @@ function App() {
         </div>
       )}
       <Dices array={dices} />
-      <div>
-      <h3>{dicesFinished ? 'Puntuación final' : 'Puntuación'}:</h3>
+      <div className="puntuation">
+      <h2>{dicesFinished ? 'Puntuación final' : 'Puntuación'}:</h2>
       <Puntuation array={dices} />
       </div>
     </div>
