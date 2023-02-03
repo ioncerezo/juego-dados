@@ -4,13 +4,17 @@ import Dices from "./elements/Dices";
 
 function App() {
   const [showRules, setShowRules] = useState(false);
-  const [dices, setDices] = useState([1, 2, 3, 4, 5])
+  const [dices, setDices] = useState([])
   
   return (
     <div>
       <h1>DICE GAME</h1>
       <button onClick={()=>setShowRules(!showRules)}>Mostrar reglas</button>
-      <button>New Dice</button>
+      <button onClick={()=>{
+        let diceArray = [...dices]
+        diceArray.push(Math.floor(Math.random() * 6)+1)
+        setDices(diceArray)
+      }}>New Dice</button>
       {showRules && (
         <div>
           <h3>Reglas</h3>
@@ -18,6 +22,7 @@ function App() {
         </div>
       )}
       <Dices array={dices} />
+      {dices}
     </div>
   );
 }

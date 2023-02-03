@@ -19,7 +19,7 @@
  
 
 .dice-container {
-    
+    flex-wrap: wrap;
     display: flex;
     gap: 6px
 }
