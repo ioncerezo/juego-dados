@@ -1,16 +1,20 @@
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import "./App.css";
 import Dices from "./elements/Dices";
 
 function App() {
   const [showRules, setShowRules] = useState(false);
   const [dices, setDices] = useState([])
-  
+  const [dicesFinished, setDicesFinished] = useState(false)
+  useEffect(()=> {
+    if (dices.length > 4) setDicesFinished(true)
+  }, [dices.length])
   return (
     <div>
       <h1>DICE GAME</h1>
+      
       <button onClick={()=>setShowRules(!showRules)}>Mostrar reglas</button>
-      <button onClick={()=>{
+      <button disabled={dicesFinished} onClick={()=>{
         let diceArray = [...dices]
         diceArray.push(Math.floor(Math.random() * 6)+1)
         setDices(diceArray)
@@ -22,7 +26,7 @@ function App() {
         </div>
       )}
       <Dices array={dices} />
-      {dices}
+      
     </div>
   );
 }
