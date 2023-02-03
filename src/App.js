@@ -27,6 +27,7 @@ function App() {
         </div>
       )}
       <Dices array={dices} />
+      <h3>{dicesFinished ? 'Puntuación final' : 'Puntuación'}:</h3>
       <Puntuation array={dices} />
     </div>
   );
